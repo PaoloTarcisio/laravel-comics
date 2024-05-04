@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    // creo una variabile per recuperare i dati nel fine comics.php della cartella config
+    $comics = config('comics');
+
+    return view('homepage', [
+        'comics' => $comics
+    ]);
+})->name('Home');
+
+Route::get('/comics', function () {
+    // creo una variabile per recuperare i dati nel fine comics.php della cartella config
+    $comics = config('comics');
+
+    $comicIndex = $_GET['index'];
+
+    $comic = $comics[$comicIndex];
+
+    return view('subpages.comics.show', compact('comic'));
+})->name('comics.show');

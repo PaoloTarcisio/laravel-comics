@@ -1,0 +1,37 @@
+@import "~bootstrap/scss/bootstrap";
+
+header {
+    color: green;
+}
+
+main {
+
+    .row
+    {
+        >*
+        {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    .my-card
+    {
+        border: 1px solid black;
+        min-height: 630px;
+
+        h5
+        {
+            min-height: 80px;
+        }
+
+        img
+        {
+            height: auto;
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    color: red;
+}
