@@ -26,7 +26,9 @@ Route::get('/comics', function () {
     // creo una variabile per recuperare i dati nel fine comics.php della cartella config
     $comics = config('comics');
 
-    $comicIndex = $_GET['index'];
+    //$comicIndex = $_GET['index']; prende tramite get il paramettro 'index' passato alla query string
+
+    $comicIndex = request()->input('index'); //request restituiisce un oggetto di tipo request che ha a disposizione una funzione 'input' che fa premdere un parametro della querystring o della richiesta in post
 
     $comic = $comics[$comicIndex];
 
